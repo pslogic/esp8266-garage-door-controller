@@ -3,7 +3,19 @@ Garage Door Control System Using the ESP8266
 
 This control system replaces the typical remote controls priovided as standard with modern garage door systems. The ESP8266 with NodeMCU firmware is used as the core controller. Activation of the sytem is via a mechanical relay wired in parallel with the wall mounted door switch. Garage door opening status is detected via a magnetic switch sensor typically used in security alarm systems.
 
-OpenHAB with HABmin is used for home automation with Mosquitto as the MQTT broker. Both services are running on a Raspberry Pi 1 Model B and faciliate communication between the ESP8266 and a mobile Android client acting as the remote control unit.
+OpenHAB with HABmin is used for home automation with Mosquitto as the MQTT broker. Both services are running on a Raspberry Pi 1 Model B and faciliate communication between the ESP8266 and a web client acting as the remote control unit.
+
+*** Manifest:
+
+<b>init.lua</b> - esp8266 boot code, primary purpose is to get an IP for the esp8266 and then execute program code; also in the event of program code crash/corruption, prevents need for full NodeMCU firmware reflash - can just correct defect in program code and upload again
+
+<b>program.lua</b> - esp8266 program code, main Lua executable; contains functional/feature code of the project; in case of a critical software defect, only program.lua is likely to become corrupted; a simple reload of a repaired program.lua file is required - no need to reflash NodeMCU firmware
+
+<b>default.items</b> - openHAB config file defining properties for the remote control function and door status report on the web client; placed in <code>/opt/openhab/configurations/items</code>
+
+<b>opening.map</b> - openHAB config file defining the translation mapping for the doorstatus code published by program.lua; used in the presentation layer (sitemap) of the web client; placed in <code>/opt/openhab/configurations/transform</code>
+
+<b>default.sitemap</b> - openHAB config file defining the look & feel of the user interface for the web client; placed in <code>/opt/openhab/configurations/sitemaps</code>
 
 *** Reuse and guidance came from the following sources:
 
@@ -21,7 +33,7 @@ OpenHAB with HABmin is used for home automation with Mosquitto as the MQTT broke
 
 [a] NodeMCU DevKit v0.9 with NodeMCU 0.9.5 build 20150318 powered by Lua 5.1.4
 
-[b] Raspberry Pi 1 Model B with Raspian Wheezy
+[b] Raspberry Pi 1 Model B with Raspbian Wheezy
 
 [c] openHAB 1.7.0 (http://openhab.org)
 

@@ -1,0 +1,9 @@
+sitemap default label="House" icon="house"
+{
+	Frame {
+		Group item=gGarage label="Garage" icon="garage" {
+			Text item=Garage_Door_Status label="Door Status [MAP(opening.map):%s]" icon="garagedoor"			
+			Switch item=Garage_Door_Remote label="Remote Control" mappings=[TOGGLE="PUSH"]			
+		}		
+	}	
+}

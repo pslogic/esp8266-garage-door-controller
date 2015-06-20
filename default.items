@@ -1,0 +1,4 @@
+Group	gGarage	"Garage"	<garage>
+Number	Garage_Door_Status	"Garage Door Status [MAP(opening.map):%s]"	<garagedoor>	{ mqtt="<[mqttbroker:openhab/garage/doorstatus:state:default]" }
+mqttbroker	openhab
+Switch	Garage_Door_Remote	"Garage Door Remote"	<settings>	{ mqtt=">[mqttbroker:openhab/garage/remotecontrol:command:on:TOGGLE]", autoupdate="false" }

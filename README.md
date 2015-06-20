@@ -7,9 +7,9 @@ OpenHAB with HABmin is used for home automation with Mosquitto as the MQTT broke
 
 *** Manifest:
 
-<b>init.lua</b> - esp8266 boot code, primary purpose is to get an IP for the esp8266 and then execute program code; also in the event of program code crash/corruption, prevents need for full NodeMCU firmware reflash - can just correct defect in program code and upload again
+<b>init.lua</b> - esp8266 boot code, primary purpose is to get an IP for the esp8266 and then execute program code
 
-<b>program.lua</b> - esp8266 program code, main Lua executable; contains functional/feature code of the project; in case of a critical software defect, only program.lua is likely to become corrupted; a simple reload of a repaired program.lua file is required - no need to reflash NodeMCU firmware
+<b>program.lua</b> - esp8266 program code, main Lua executable; contains functional/feature code of the project
 
 <b>default.items</b> - openHAB config file defining properties for the remote control function and door status report on the web client; placed in <code>/opt/openhab/configurations/items</code>
 

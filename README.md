@@ -42,3 +42,5 @@ OpenHAB with HABmin is used for home automation with Mosquitto as the MQTT broke
 [e] NodeMCU Flasher (https://github.com/nodemcu/nodemcu-flasher)
 
 [f] ESP8266 Lua Loader v0.87 (http://benlo.com/esp8266/index.html#LuaLoader)
+
+[g] My MQTT (https://play.google.com/store/apps/details?id=at.tripwire.mqtt.client&hl=en)

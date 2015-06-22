@@ -1,7 +1,7 @@
 # esp8266-garage-door-controller
 Garage Door Control System Using the ESP8266
 
-This control system replaces the typical remote controls priovided as standard with modern garage door systems. The ESP8266 with NodeMCU firmware is used as the core controller. Activation of the sytem is via a mechanical relay wired in parallel with the wall mounted door switch. Garage door opening status is detected via a magnetic switch sensor typically used in security alarm systems.
+This control system replaces the typical remote controls provided as standard with modern garage door systems. The ESP8266 with NodeMCU firmware is used as the core controller. Activation of the sytem is via a mechanical relay wired in parallel with the wall mounted door switch. Garage door opening status is detected via a magnetic switch sensor typically used in security alarm systems.
 
 OpenHAB with HABmin is used for home automation with Mosquitto as the MQTT broker. Both services are running on a Raspberry Pi 1 Model B and faciliate communication between the ESP8266 and a web client acting as the remote control unit.
 
@@ -28,6 +28,8 @@ OpenHAB with HABmin is used for home automation with Mosquitto as the MQTT broke
 [4] Installing openHAB, Habmin and GreenT on a raspberry pi (Raspbian) (http://www.addictedtopi.com/post/92932590168/installing-openhab-habmin-and-greent-on-a)
 
 [5] HABmin on Raspberry Pi, (An openHAB Admin Console) (http://www.instructables.com/id/openHAB-Admin-Console-HABmin-on-Raspberry-Pi/step3/Installation-Option-2-alternative/)
+
+[6] How to configure a switch to be a pushbutton (https://code.google.com/p/openhab-samples/wiki/ItemDef#How_to_configure_a_switch_to_be_a_pushbutton:)
 
 *** Development Environment:
 

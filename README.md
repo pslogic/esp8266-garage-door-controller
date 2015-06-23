@@ -31,6 +31,8 @@ OpenHAB with HABmin is used for home automation with Mosquitto as the MQTT broke
 
 [6] How to configure a switch to be a pushbutton (https://code.google.com/p/openhab-samples/wiki/ItemDef#How_to_configure_a_switch_to_be_a_pushbutton:)
 
+[7] ESP8266 Thing Hookup Guide / Powering the Thing (https://learn.sparkfun.com/tutorials/esp8266-thing-hookup-guide/powering-the-thing)
+
 *** Development Environment:
 
 [a] NodeMCU DevKit v0.9 with NodeMCU 0.9.5 build 20150318 powered by Lua 5.1.4

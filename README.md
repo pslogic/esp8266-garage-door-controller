@@ -35,6 +35,8 @@ OpenHAB with HABmin is used for home automation with Mosquitto as the MQTT broke
 
 [8] Foscam IP camera URL (http://www.ispyconnect.com/man.aspx?n=foscam)
 
+[9] Garage Genie - Parking & Remote Control (http://www.instructables.com/id/Garage-Genie-Parking-Remote-Control/?ALLSTEPS)
+
 *** Development Environment:
 
 [a] NodeMCU DevKit v0.9 with NodeMCU 0.9.5 build 20150318 powered by Lua 5.1.4

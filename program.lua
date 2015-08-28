@@ -49,10 +49,10 @@ end
 
 -- publish a state change to doorstatus
 function pubdoorstatus()
-   state = gpio.read(DOORSTATUS)
-   m:publish("openhab/garage/doorstatus",state,0,0, function(client) print("Published doorstatus")
-      print("Door status is " .. state)
-   end)
+	state = gpio.read(DOORSTATUS)
+	m:publish("openhab/garage/doorstatus",state,0,0, function(client) print("Published doorstatus")
+		print("Door status is " .. state)
+	end)
 end
 
 -- Start up MQTT
@@ -74,22 +74,22 @@ end)
 
 -- remotecontrol activated
 m:on("message", function(client, topic, msg) print("Received:" .. topic .. ":" .. msg)   
-   if (msg=="TOGGLE") then  -- Activate Door Button
-      print("Activated remotecontrol") -- manual door control is normally open (NO)
-      gpio.write(REMOTECONTROL,gpio.HIGH)  
-      tmr.delay(1000000) -- wait 1 second
-      gpio.write(REMOTECONTROL,gpio.LOW)  
-   else  
-      print("Invalid - Ignoring")   
-   end   
+	if (msg=="TOGGLE") then  -- Activate Door Button
+		print("Activated remotecontrol") -- manual door control is normally open (NO)
+		gpio.write(REMOTECONTROL,gpio.HIGH)  
+		tmr.delay(1000000) -- wait 1 second
+		gpio.write(REMOTECONTROL,gpio.LOW)  
+	else  
+		print("Invalid - Ignoring")   
+	end   
 end)
 
 -- doorstatus triggered
 gpio.trig(DOORSTATUS, "both", function(level) print("Triggered doorstatus")
-   if pcall(pubdoorstatus) then
-      print("Publish doorstatus success")
-   else
-      print("Publish doorstatus failed")
-   end
+	if pcall(pubdoorstatus) then
+		print("Publish doorstatus success")
+	else
+		print("Publish doorstatus failed")
+	end
 end)
 
